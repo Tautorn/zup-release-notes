@@ -1,36 +1,41 @@
 #!/bin/sh
 
-echo "\nRELEASE NOTES\n - $1"
+for project in realwave-bff realwave-sfm
+do
 
-mkdir TEMP_RELEASE_NOTES
+  echo "\nRELEASE NOTES - $project"
 
-cd TEMP_RELEASE_NOTES
+  mkdir TEMP_RELEASE_NOTES
 
-echo '\nCLONING REPO\n'
+  cd TEMP_RELEASE_NOTES
 
-git clone https://github.com/ZupIT/$1.git
+  echo '\nCLONING REPO\n'
 
-cd $1
+  git clone https://github.com/ZupIT/$project.git
 
-echo '\nGENERING CHANGE_LOG.md\n'
+  cd $project
 
-git checkout -b RELEASE_NOTES
+  echo '\nGENERING CHANGE_LOG.md\n'
 
-github_changelog_generator -u zupIT -p $1
+  git checkout -b RELEASE_NOTES
 
-echo '\nCOMMITNIG BRANCH\n'
+  github_changelog_generator -u zupIT -p $project
 
-git add -A
+  echo '\nCOMMITNIG BRANCH\n'
 
-git commit -m 'RELEASE NOTES'
+  git add -A
 
-git push --set-upstream origin RELEASE_NOTES
+  git commit -m 'RELEASE NOTES'
 
-#echo '\nOPENING PULL REQUEST\n'
-#git request-pull RELEASE_NOTES $1 master
+  git push --set-upstream origin RELEASE_NOTES
 
-echo '\nREMOVING TEMP_RELEASE_NOTES\n'
+  #echo '\nOPENING PULL REQUEST\n'
+  #git request-pull RELEASE_NOTES $project master
 
-rm -rf ../../TEMP_RELEASE_NOTES
+  echo '\nREMOVING TEMP_RELEASE_NOTES\n'
 
-echo "\nEXITING - $1"
+  rm -rf ../../TEMP_RELEASE_NOTES
+
+  echo "\nEXITING - $project"
+
+done
