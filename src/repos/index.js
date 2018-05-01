@@ -1,9 +1,9 @@
 const repos = [
   // 'realwave-crm-core',
-  'realwave-crm-ui',
-  'realwave-web-ui'
+  // 'realwave-crm-ui',
+  // 'realwave-web-ui'
   // 'realwave-bff',
-  // 'zup-cora-ui'
+  'zup-cora-ui'
   /*realwave-sfm*/
 ]
 
