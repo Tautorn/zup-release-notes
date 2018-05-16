@@ -34,7 +34,9 @@ do
 
   echo '\nREMOVING TEMP_RELEASE_NOTES\n'
 
-  rm -rf ../../TEMP_RELEASE_NOTES
+  cd ../../
+
+  rm -rf TEMP_RELEASE_NOTES
 
   echo "\nEXITING - $project"
 
