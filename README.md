@@ -1,6 +1,6 @@
 # zup-release-notes
 
-Generete release:
+Generate release:
 
 ```Shell
 sh src/scripts/release.sh
