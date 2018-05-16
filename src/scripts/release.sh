@@ -1,6 +1,6 @@
 #!/bin/sh
 
-for project in realwave-crm-ui realwave-sfm-ui realwave-bff realwave-sfm
+for project in zup-cora-ui realwave-crm-core realwave-crm-ui realwave-sfm-ui realwave-bff realwave-sfm
 do
 
   echo "\nRELEASE NOTES - $project"
